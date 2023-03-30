@@ -2,27 +2,24 @@ import subprocess
 import tkinter as tk
 from tkinter import ttk, messagebox
 
-def run_rupee(query, search_mode, search_type):
+def run_rupee(search_mode, search_type):
     script_path = "./rupee-search/target/run_rupee-search.sh"
-    subprocess.run([script_path, query, search_mode, search_type])
+    subprocess.run([script_path, search_mode, search_type])
     messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
 
 def submit_form():
-    query = query_entry.get()
+    #query = query_entry.get()
     search_mode = search_mode_var.get()
     search_type = search_type_var.get()
 
-    if not query or not search_mode or not search_type:
+    if not search_mode or not search_type:
         messagebox.showerror("Error", "Por favor, completa todos los campos.")
         return
 
-    run_rupee(query, search_mode, search_type)
+    run_rupee(search_mode, search_type)
 
 app = tk.Tk()
 app.title("Rupee GUI")
-
-query_label = tk.Label(app, text="QUERY:")
-query_label.grid(column=0, row=0)
 
 query_entry = tk.Entry(app)
 query_entry.grid(column=1, row=0)
@@ -45,4 +42,3 @@ submit_button = tk.Button(app, text="Ejecutar", command=submit_form)
 submit_button.grid(column=1, row=3)
 
 app.mainloop()
-

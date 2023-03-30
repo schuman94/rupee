@@ -1,0 +1,1 @@
+n,db_id_1,db_id_2,rmsd,tm_score,q_score,ssap_score,search_mode,search_type
