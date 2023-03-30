@@ -56,3 +56,8 @@ rupee-search/.settings/
 rupee-search/.classpath
 rupee-search/.project
 
+# upload files
+/upload_dir/upload/*
+
+# DIR_PATH
+pdb/*
