@@ -1,3 +1,2 @@
-opcion de realizar la comparacion para todos los ficheros pdb del upload y guardarlos en ficheros diferentes
 script de compilacion mvn package install cada vez que cambiemos el upload.
 script de poblado de tablas cada vez que seleccionemos una base de datos diferente.

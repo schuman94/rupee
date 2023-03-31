@@ -61,3 +61,6 @@ rupee-search/.project
 
 # DIR_PATH
 pdb/*
+
+# output
+output/*
