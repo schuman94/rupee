@@ -7,14 +7,14 @@ def run_rupee(search_mode, search_type):
     subprocess.run([script_path, search_mode, search_type])
     messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
 
-def update_database(database_path):
-    database_path = database_path
+def update_database():
+    database_path = database_path_var.get()
 
     if not database_path:
         messagebox.showerror("Error", "Por favor, selecciona un directorio.")
         return
 
-    constants_file_path = "src/main/java/edu/umkc/rupee/search/lib/Constants.java"
+    constants_file_path = "rupee-search/src/main/java/edu/umkc/rupee/search/lib/Constants.java"
     new_dir_path_line = f'    public static String DIR_PATH = "{database_path}";\n'
 
     with open(constants_file_path, "r") as file:
@@ -22,7 +22,7 @@ def update_database(database_path):
 
     with open(constants_file_path, "w") as file:
         for line in lines:
-            if line.strip().startswith("public static String DIR_PATH"):
+            if line.strip().startswith("public final static String DIR_PATH"):
                 file.write(new_dir_path_line)
             else:
                 file.write(line)
@@ -46,14 +46,6 @@ def browse_directory():
     directory = filedialog.askdirectory()
     database_path_var.set(directory)
 
-def update_database_button():
-    database_path = database_path_var.get()
-    if not database_path:
-        messagebox.showerror("Error", "Por favor, selecciona un directorio.")
-        return
-
-    update_database(database_path)
-
 app = tk.Tk()
 app.title("Rupee GUI")
 #app.geometry("600x300")
@@ -68,7 +60,7 @@ database_entry.grid(column=1, row=0)
 browse_button = tk.Button(app, text="Examinar", command=browse_directory)
 browse_button.grid(column=2, row=0)
 
-update_button = tk.Button(app, text="Actualizar", command=update_database_button)
+update_button = tk.Button(app, text="Actualizar", command=update_database)
 update_button.grid(column=3, row=0)
 
 search_mode_label = tk.Label(app, text="SEARCH_MODE:")
