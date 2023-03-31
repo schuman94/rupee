@@ -1,2 +1,5 @@
 script de compilacion mvn package install cada vez que cambiemos el upload.
 script de poblado de tablas cada vez que seleccionemos una base de datos diferente.
+
+
+ahora vamos a programar el script actualizar_bbdd.sh   quiero que este archivo haga varias cosas. Primero modificará la shell se irá a la ruta donde se encuentra el script, es decir a la ruta rupee-search, luego modificará el fichero Constants.java que se encuentra en la ruta "src/main/java/edu/umkc/

@@ -8,7 +8,6 @@ def run_rupee(search_mode, search_type):
     messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
 
 def submit_form():
-    #query = query_entry.get()
     search_mode = search_mode_var.get()
     search_type = search_type_var.get()
 
@@ -20,9 +19,6 @@ def submit_form():
 
 app = tk.Tk()
 app.title("Rupee GUI")
-
-query_entry = tk.Entry(app)
-query_entry.grid(column=1, row=0)
 
 search_mode_label = tk.Label(app, text="SEARCH_MODE:")
 search_mode_label.grid(column=0, row=1)
