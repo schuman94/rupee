@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 
 def run_rupee(search_mode, search_type):
-    script_path = "./rupee-search/target/run_rupee-search.sh"
+    script_path = "./rupee-search/run_rupee-search.sh"
     subprocess.run([script_path, search_mode, search_type])
     messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
 
