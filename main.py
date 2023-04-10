@@ -15,7 +15,7 @@ def update_database():
         return
 
     constants_file_path = "rupee-search/src/main/java/edu/umkc/rupee/search/lib/Constants.java"
-    new_dir_path_line = f'    public final static String DIR_PATH = "{database_path}";\n'
+    new_dir_path_line = f'    public final static String DIR_PATH = "{database_path}/";\n'
 
     with open(constants_file_path, "r") as file:
         lines = file.readlines()
