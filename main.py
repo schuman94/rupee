@@ -3,7 +3,7 @@ import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 
 def run_rupee(search_mode, search_type):
-    script_path = "./rupee-search/run_rupee-search.sh"
+    script_path = "./run_rupee-search.sh"
     subprocess.run([script_path, search_mode, search_type])
     messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
 
@@ -15,7 +15,7 @@ def update_database():
         return
 
     constants_file_path = "rupee-search/src/main/java/edu/umkc/rupee/search/lib/Constants.java"
-    new_dir_path_line = f'    public static String DIR_PATH = "{database_path}";\n'
+    new_dir_path_line = f'    public final static String DIR_PATH = "{database_path}";\n'
 
     with open(constants_file_path, "r") as file:
         lines = file.readlines()
@@ -30,7 +30,6 @@ def update_database():
     script_path = "./actualizar_bbdd.sh"
     subprocess.run([script_path])
     messagebox.showinfo("Rupee", "La base de datos se ha actualizado.")
-
 
 def submit_form():
     search_mode = search_mode_var.get()

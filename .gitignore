@@ -57,10 +57,10 @@ rupee-search/.classpath
 rupee-search/.project
 
 # upload files
-/upload_dir/upload/*
+/upload_dir/upload/*.pdb
 
 # DIR_PATH
-pdb/*
+pdb/*.pdb
 
 # output
-output/*
+output/*.txt

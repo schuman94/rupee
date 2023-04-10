@@ -12,7 +12,7 @@ public class Constants {
     public final static String DB_PASSWORD = "ayoub";
   
     // MODIFICADO: Ruta al directorio que contiene el directorio upload. Dentro de upload estarán los ficheros pdb problema.
-    public final static String DATA_PATH = "/home/sergio/Escritorio/rupee/upload_dir";
+    public final static String DATA_PATH = "/home/sergio/Escritorio/rupee/upload_dir/";
 
     public final static String CHAIN_PATH = DATA_PATH + "chain/";
     public final static String SCOP_PATH = DATA_PATH + "scop/";
@@ -27,7 +27,7 @@ public class Constants {
     public final static String UPLOAD_PATH = DATA_PATH + "upload/";
 
     // MODIDICADO: Ruta al directorio que contiene los ficheros pdb con los que se construirá la base de datos sql.
-    public static String DIR_PATH = "/home/sergio/Escritorio/bases de datos/ARACHNIDS";
+    public final static String DIR_PATH = "/home/sergio/Escritorio/bases de datos/CUSTOM";
 
     public final static String PDB_PATH = DATA_PATH + "pdb/";
     public final static String PDB_PDB_PATH = PDB_PATH + "pdb/";
