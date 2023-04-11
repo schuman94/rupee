@@ -5,12 +5,12 @@ public class Constants {
     public final static String APP_NAME = "RUPEE";
 
     public final static String DB_NAME = "rupee";
-   
-    // *** LOCAL ONLY CONSTANTS  
-    
+
+    // *** LOCAL ONLY CONSTANTS
+
     public final static String DB_USER = "ayoub";
     public final static String DB_PASSWORD = "ayoub";
-  
+
     // MODIFICADO: Ruta al directorio que contiene el directorio upload. Dentro de upload estarán los ficheros pdb problema.
     public final static String DATA_PATH = "/home/sergio/Escritorio/rupee/upload_dir/";
 
@@ -18,26 +18,26 @@ public class Constants {
     public final static String SCOP_PATH = DATA_PATH + "scop/";
     public final static String CATH_PATH = DATA_PATH + "cath/";
     public final static String AFDB_PATH = DATA_PATH + "afdb/";
-    
+
     public final static String CHAIN_PDB_PATH = CHAIN_PATH + "pdb/";
     public final static String SCOP_PDB_PATH = SCOP_PATH + "pdb/";
-    public final static String CATH_PDB_PATH = CATH_PATH + "pdb/"; 
+    public final static String CATH_PDB_PATH = CATH_PATH + "pdb/";
     public final static String AFDB_PDB_PATH = AFDB_PATH + "pdb/";
 
-    public final static String UPLOAD_PATH = DATA_PATH + "upload/";
+    public final static String UPLOAD_PATH = DATA_PATH;
 
     // MODIDICADO: Ruta al directorio que contiene los ficheros pdb con los que se construirá la base de datos sql.
-    public final static String DIR_PATH = "/home/sergio/Escritorio/bases de datos/CUSTOM/";
+    public final static String DIR_PATH = "/home/sergio/Escritorio/bases de datos/CONOTOXINS/";
 
     public final static String PDB_PATH = DATA_PATH + "pdb/";
     public final static String PDB_PDB_PATH = PDB_PATH + "pdb/";
     public final static String PDB_OBSOLETE_PATH = PDB_PATH + "obsolete/";
-    public final static String PDB_BUNDLE_PATH = PDB_PATH + "chopped/"; 
-    
+    public final static String PDB_BUNDLE_PATH = PDB_PATH + "chopped/";
+
     public final static int MIN_GRAM_COUNT = 10;
     public final static int MIN_HASH_COUNT = 99;
     public final static int BAND_HASH_COUNT = 33;
-    
+
     public final static double SIMILARITY_THRESHOLD = 0.10;
 
     public final static int DEC_POW_1 = 10;
@@ -51,4 +51,3 @@ public class Constants {
     public final static int SEARCH_SPLIT_COUNT = 12;
     public final static int PROCESSED_INCREMENT = 500;
 }
-

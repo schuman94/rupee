@@ -10,7 +10,7 @@ mkdir -p output
 cd ./rupee-search/target/
 
 # Iterar sobre todos los archivos .pdb en la carpeta "../../pdb/"
-for pdb_file in ../../upload_dir/upload/*.pdb; do
+for pdb_file in ../../upload_dir/*.pdb; do
     # Obtener el nombre del archivo sin la extensión .pdb
     pdb=$(basename "$pdb_file" .pdb)
 
