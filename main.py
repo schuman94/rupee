@@ -2,9 +2,9 @@ import subprocess
 import tkinter as tk
 from tkinter import ttk, messagebox, filedialog
 
-def run_rupee(search_mode, search_type, upload_path):
+def run_rupee(search_mode, search_type, upload_path, output_path):
     script_path = "./run_rupee-search.sh"
-    subprocess.run([script_path, search_mode, search_type, upload_path])
+    subprocess.run([script_path, search_mode, search_type, upload_path, output_path])
     messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
 
 def update_database():
@@ -35,12 +35,13 @@ def submit_form():
     search_mode = search_mode_var.get()
     search_type = search_type_var.get()
     upload_path = upload_path_var.get()
+    output_path = output_path_var.get()
 
-    if not search_mode or not search_type or not upload_path:
+    if not search_mode or not search_type or not upload_path or not output_path:
         messagebox.showerror("Error", "Por favor, completa todos los campos.")
         return
 
-    run_rupee(search_mode, search_type, upload_path)
+    run_rupee(search_mode, search_type, upload_path, output_path)
 
 def browse_directory():
     directory = filedialog.askdirectory()
@@ -49,6 +50,10 @@ def browse_directory():
 def browse_upload_directory():
     directory = filedialog.askdirectory()
     upload_path_var.set(directory)
+
+def browse_output_directory():
+    directory = filedialog.askdirectory()
+    output_path_var.set(directory)
 
 app = tk.Tk()
 app.title("Rupee GUI")
@@ -91,7 +96,17 @@ search_type_var = tk.StringVar()
 search_type_combobox = ttk.Combobox(app, textvariable=search_type_var, values=("FULL_LENGTH", "CONTAINED_IN", "CONTAINS", "RMSD", "Q_SCORE", "SSAP_SCORE"))
 search_type_combobox.grid(column=1, row=3)
 
+output_label = tk.Label(app, text="Directorio salida:")
+output_label.grid(column=0, row=4)
+
+output_path_var = tk.StringVar()
+output_entry = tk.Entry(app, textvariable=output_path_var)
+output_entry.grid(column=1, row=4)
+
+browse_output_button = tk.Button(app, text="Examinar", command=browse_output_directory)
+browse_output_button.grid(column=2, row=4)
+
 submit_button = tk.Button(app, text="Ejecutar", command=submit_form)
-submit_button.grid(column=1, row=4)
+submit_button.grid(column=1, row=5)
 
 app.mainloop()
