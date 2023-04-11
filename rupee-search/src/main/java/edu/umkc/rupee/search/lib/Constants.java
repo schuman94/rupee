@@ -24,7 +24,7 @@ public class Constants {
     public final static String CATH_PDB_PATH = CATH_PATH + "pdb/";
     public final static String AFDB_PDB_PATH = AFDB_PATH + "pdb/";
 
-    public final static String UPLOAD_PATH = DATA_PATH;
+    public final static String UPLOAD_PATH = DATA_PATH + "upload/";
 
     // MODIDICADO: Ruta al directorio que contiene los ficheros pdb con los que se construirá la base de datos sql.
     public final static String DIR_PATH = "/home/sergio/Escritorio/bases de datos/CONOTOXINS/";
