@@ -17,6 +17,13 @@
 \i upload_grams.sql
 \i upload_hashes.sql
 
+-- alter sequences
+ALTER SEQUENCE cath_domain_cath_sid_seq CYCLE;
+ALTER SEQUENCE chain_chain_sid_seq CYCLE;
+ALTER SEQUENCE dir_chain_db_sid_seq CYCLE;
+ALTER SEQUENCE scop_domain_scop_sid_seq CYCLE;
+ALTER SEQUENCE upload_grams_upload_id_seq CYCLE;
+
 -- functions
 \i get_cath_augmented_results.sql
 \i get_cath_band_matches.sql
