@@ -5,13 +5,13 @@ from tkinter import ttk, messagebox, filedialog
 def run_rupee(search_mode, search_type, upload_path, output_path):
     script_path = "./run_rupee-search.sh"
     subprocess.run([script_path, search_mode, search_type, upload_path, output_path])
-    messagebox.showinfo("Rupee", "La búsqueda ha finalizado.")
+    messagebox.showinfo("Rupee", "Search has finished.")
 
 def update_database():
     database_path = database_path_var.get()
 
     if not database_path:
-        messagebox.showerror("Error", "Por favor, selecciona un directorio como base de datos.")
+        messagebox.showerror("Error", "Please, select a directory as the database.")
         return
 
     constants_file_path = "rupee-search/src/main/java/edu/umkc/rupee/search/lib/Constants.java"
@@ -29,7 +29,7 @@ def update_database():
 
     script_path = "./actualizar_bbdd.sh"
     subprocess.run([script_path])
-    messagebox.showinfo("Rupee", "La base de datos se ha actualizado.")
+    messagebox.showinfo("Rupee", "Database has been updated.")
 
 def submit_form():
     search_mode = search_mode_var.get()
@@ -38,7 +38,7 @@ def submit_form():
     output_path = output_path_var.get()
 
     if not search_mode or not search_type or not upload_path or not output_path:
-        messagebox.showerror("Error", "Por favor, completa todos los campos.")
+        messagebox.showerror("Error", "Please, fill out all fields.")
         return
 
     run_rupee(search_mode, search_type, upload_path, output_path)
