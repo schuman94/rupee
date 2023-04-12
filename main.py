@@ -95,6 +95,7 @@ search_mode_label = tk.Label(app, text="Search mode:")
 search_mode_label.grid(column=0, row=2, sticky="e", padx=5, pady=5)
 
 search_mode_var = tk.StringVar()
+search_mode_var.set("TOP_ALIGNED")
 search_mode_combobox = ttk.Combobox(app, textvariable=search_mode_var, values=("FAST", "TOP_ALIGNED", "ALL_ALIGNED"))
 search_mode_combobox.grid(column=1, row=2, columnspan=2, sticky="ew", padx=5, pady=5)
 
@@ -102,6 +103,7 @@ search_type_label = tk.Label(app, text="Search type:")
 search_type_label.grid(column=0, row=3, sticky="e", padx=5, pady=5)
 
 search_type_var = tk.StringVar()
+search_type_var.set("CONTAINED_IN")
 search_type_combobox = ttk.Combobox(app, textvariable=search_type_var, values=("FULL_LENGTH", "CONTAINED_IN", "CONTAINS", "RMSD", "Q_SCORE", "SSAP_SCORE"))
 search_type_combobox.grid(column=1, row=3, columnspan=2, sticky="ew", padx=5, pady=5)
 
