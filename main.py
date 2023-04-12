@@ -1,5 +1,6 @@
 import subprocess
 import tkinter as tk
+import os
 from tkinter import ttk, messagebox, filedialog
 
 def run_rupee(search_mode, search_type, upload_path, output_path):
@@ -17,6 +18,9 @@ def update_database():
     constants_file_path = "rupee-search/src/main/java/edu/umkc/rupee/search/lib/Constants.java"
     new_dir_path_line = f'    public final static String DIR_PATH = "{database_path}/";\n'
 
+    current_dir = os.path.dirname(os.path.abspath(__file__))
+    new_data_path_line = f'    public final static String DATA_PATH = "{current_dir}/data/";\n'
+
     with open(constants_file_path, "r") as file:
         lines = file.readlines()
 
@@ -24,6 +28,8 @@ def update_database():
         for line in lines:
             if line.strip().startswith("public final static String DIR_PATH"):
                 file.write(new_dir_path_line)
+            elif line.strip().startswith("public final static String DATA_PATH"):
+                file.write(new_data_path_line)
             else:
                 file.write(line)
 

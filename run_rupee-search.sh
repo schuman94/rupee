@@ -13,6 +13,6 @@ for pdb_file in "$3"/*.pdb; do
     java -jar -Dlog4j.configurationFile=log4j2.xml rupee-search-0.0.1-SNAPSHOT-jar-with-dependencies.jar -u DIR,"$pdb_file",FALSE,FALSE,FALSE,FALSE,FALSE,FALSE,"$1","$2" > "$4/${pdb_id}-output.txt"
 done
 
-for pdb in ../../upload_dir/upload/*.pdb; do
+for pdb in ../../data/upload/*.pdb; do
     rm "$pdb"
 done

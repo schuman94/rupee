@@ -55,12 +55,3 @@ rupee-tm/.project
 rupee-search/.settings/
 rupee-search/.classpath
 rupee-search/.project
-
-# upload files
-upload_dir/upload/*.pdb
-
-# DIR_PATH
-pdb/*.pdb
-
-# output
-output/*.txt
