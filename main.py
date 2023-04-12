@@ -56,57 +56,60 @@ def browse_output_directory():
     output_path_var.set(directory)
 
 app = tk.Tk()
-app.title("Rupee GUI")
-#app.geometry("600x300")
+app.title("RUPEE")
 
-database_label = tk.Label(app, text="Base de datos:")
-database_label.grid(column=0, row=0)
+for i in range(5):
+    app.columnconfigure(i, weight=1, minsize=100)
+    app.rowconfigure(i, weight=1, minsize=50)
+
+database_label = tk.Label(app, text="Database:")
+database_label.grid(column=0, row=0, sticky="e", padx=5, pady=5)
 
 database_path_var = tk.StringVar()
-database_entry = tk.Entry(app, textvariable=database_path_var)
-database_entry.grid(column=1, row=0)
+database_entry = tk.Entry(app, textvariable=database_path_var, width=40)
+database_entry.grid(column=1, row=0, columnspan=2, sticky="ew", padx=5, pady=5)
 
-browse_button = tk.Button(app, text="Examinar", command=browse_directory)
-browse_button.grid(column=2, row=0)
+browse_button = tk.Button(app, text="Browse", command=browse_directory)
+browse_button.grid(column=3, row=0, sticky="w", padx=5, pady=5)
 
-update_button = tk.Button(app, text="Actualizar", command=update_database)
-update_button.grid(column=3, row=0)
+update_button = tk.Button(app, text="Update", command=update_database)
+update_button.grid(column=4, row=0, sticky="w", padx=5, pady=5)
 
-upload_label = tk.Label(app, text="Directorio subida:")
-upload_label.grid(column=0, row=1)
+upload_label = tk.Label(app, text="Upload:")
+upload_label.grid(column=0, row=1, sticky="e", padx=5, pady=5)
 
 upload_path_var = tk.StringVar()
-upload_entry = tk.Entry(app, textvariable=upload_path_var)
-upload_entry.grid(column=1, row=1)
+upload_entry = tk.Entry(app, textvariable=upload_path_var, width=40)
+upload_entry.grid(column=1, row=1, columnspan=2, sticky="ew", padx=5, pady=5)
 
-browse_upload_button = tk.Button(app, text="Examinar", command=browse_upload_directory)
-browse_upload_button.grid(column=2, row=1)
+browse_upload_button = tk.Button(app, text="Browse", command=browse_upload_directory)
+browse_upload_button.grid(column=3, row=1, sticky="w", padx=5, pady=5)
 
-search_mode_label = tk.Label(app, text="SEARCH_MODE:")
-search_mode_label.grid(column=0, row=2)
+search_mode_label = tk.Label(app, text="Search mode:")
+search_mode_label.grid(column=0, row=2, sticky="e", padx=5, pady=5)
 
 search_mode_var = tk.StringVar()
 search_mode_combobox = ttk.Combobox(app, textvariable=search_mode_var, values=("FAST", "TOP_ALIGNED", "ALL_ALIGNED"))
-search_mode_combobox.grid(column=1, row=2)
+search_mode_combobox.grid(column=1, row=2, columnspan=2, sticky="ew", padx=5, pady=5)
 
-search_type_label = tk.Label(app, text="SEARCH_TYPE:")
-search_type_label.grid(column=0, row=3)
+search_type_label = tk.Label(app, text="Search type:")
+search_type_label.grid(column=0, row=3, sticky="e", padx=5, pady=5)
 
 search_type_var = tk.StringVar()
 search_type_combobox = ttk.Combobox(app, textvariable=search_type_var, values=("FULL_LENGTH", "CONTAINED_IN", "CONTAINS", "RMSD", "Q_SCORE", "SSAP_SCORE"))
-search_type_combobox.grid(column=1, row=3)
+search_type_combobox.grid(column=1, row=3, columnspan=2, sticky="ew", padx=5, pady=5)
 
-output_label = tk.Label(app, text="Directorio salida:")
-output_label.grid(column=0, row=4)
+output_label = tk.Label(app, text="Output:")
+output_label.grid(column=0, row=4, sticky="e", padx=5, pady=5)
 
 output_path_var = tk.StringVar()
-output_entry = tk.Entry(app, textvariable=output_path_var)
-output_entry.grid(column=1, row=4)
+output_entry = tk.Entry(app, textvariable=output_path_var, width=40)
+output_entry.grid(column=1, row=4, columnspan=2, sticky="ew", padx=5, pady=5)
 
-browse_output_button = tk.Button(app, text="Examinar", command=browse_output_directory)
-browse_output_button.grid(column=2, row=4)
+browse_output_button = tk.Button(app, text="Browse", command=browse_output_directory)
+browse_output_button.grid(column=3, row=4, sticky="w", padx=5, pady=5)
 
-submit_button = tk.Button(app, text="Ejecutar", command=submit_form)
-submit_button.grid(column=1, row=5)
+submit_button = tk.Button(app, text="Search", command=submit_form)
+submit_button.grid(column=1, row=5, columnspan=2, padx=5, pady=5)
 
 app.mainloop()
