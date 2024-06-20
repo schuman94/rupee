@@ -12,7 +12,7 @@ public class Constants {
     public final static String DB_PASSWORD = "ayoub";
 
     // directory used for temporary storage of uploaded pdb files
-    public final static String DATA_PATH = "/home/sergio/Escritorio/rupee/data/";
+    public final static String DATA_PATH = "";
 
     public final static String CHAIN_PATH = DATA_PATH + "chain/";
     public final static String SCOP_PATH = DATA_PATH + "scop/";
@@ -27,7 +27,7 @@ public class Constants {
     public final static String UPLOAD_PATH = DATA_PATH + "upload/";
 
     // Database path
-    public final static String DIR_PATH = "/home/sergio/Escritorio/bases de datos/CONOTOXINS/";
+    public final static String DIR_PATH = "";
 
     public final static String PDB_PATH = DATA_PATH + "pdb/";
     public final static String PDB_PDB_PATH = PDB_PATH + "pdb/";
